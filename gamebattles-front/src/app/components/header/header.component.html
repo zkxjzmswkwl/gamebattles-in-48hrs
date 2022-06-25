@@ -1,0 +1,37 @@
+<div class="border-b-2 border-b-blue-600 navbar bg-base-200">
+  <div class="ml-44 flex-1">
+    <a [routerLink]="['']" class="btn btn-ghost normal-case text-xl">Gamebattles</a>
+  </div>
+
+  <div class="flex-none gap-1 mr-44">
+    <!-- What's shown when not authenticated -->
+    <ul *ngIf="!auth.isAuthed" class="menu menu-horizontal p-0">
+      <li><a class="btn btn-ghost" [routerLink]="['/login']">Login</a></li>
+      <li><a class="btn btn-ghost" [routerLink]="['/register']">Register</a></li>
+    </ul>
+    <!-- What's shown when authenticated -->
+    <div *ngIf="auth.isAuthed" class="dropdown dropdown-end">
+
+      <div class="indicator">
+        <span class="indicator-item badge badge-primary"></span>
+
+        <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+          <div class="w-10 rounded-full">
+            <img src="https://pbs.twimg.com/profile_images/1527397318747627521/X6F44iUp_400x400.jpg" />
+          </div>
+        </label>
+      </div>
+
+      <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+        <li>
+          <a class="justify-between">
+            Profile
+            <span class="badge">!</span>
+          </a>
+        </li>
+        <li><a>Sword</a></li>
+        <li><a>Sword</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

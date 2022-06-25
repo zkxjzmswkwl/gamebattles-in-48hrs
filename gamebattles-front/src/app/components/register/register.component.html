@@ -1,0 +1,55 @@
+<app-header></app-header>
+
+
+<div class="hero min-h-screen bg-base-200" style="background-image: url(https://i.imgur.com/EVGuZzJ.png);">
+  <div class="hero-overlay bg-opacity-80"></div>
+  <div class="hero-content flex-col lg:flex-row-reverse">
+    <div class="text-center lg:text-left">
+      <h1 class="text-5xl font-bold">Registration</h1>
+      <p class="py-6">Sword Sword Sword Sword Sword Sword Sword Sword Sword Sword Sword Sword </p>
+    </div>
+
+    <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+      <div class="card-body">
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Email</span>
+          </label>
+          <input [(ngModel)]="email" type="text" placeholder="Alexander" class="input input-bordered" />
+        </div>
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Password</span>
+          </label>
+          <input [(ngModel)]="password" type="password" placeholder="'Sword'" class="input input-bordered" />
+        </div>
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Confirm Password</span>
+          </label>
+          <input [(ngModel)]="confirmPassword" type="password" placeholder="Szymkiewicz" class="input input-bordered" />
+          <label class="label">
+            <a [routerLink]="['/login']" class="label-text-alt link link-hover">Already have an account?</a>
+          </label>
+
+        </div>
+
+        <div class="form-control mt-3">
+          <button (click)="register()" class="btn btn-primary">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
+<input [(ngModel)]="mismatchingPasswords" type="checkbox" id="modal69" class="modal-toggle" />
+<div class="modal">
+  <div class="modal-box">
+    <h3 class="font-bold text-lg">Mismatching passwords</h3>
+    <p class="py-4">The passwords you've entered don't match. Correct that and try again.</p>
+    <div class="modal-action">
+      <label for="modal69" class="btn">soz</label>
+    </div>
+  </div>
+</div>

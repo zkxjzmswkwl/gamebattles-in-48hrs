@@ -1,0 +1,42 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+gamebattles-front/dist
+gamebattles-front/tmp
+gamebattles-front/out-tsc
+gamebattles-front/bazel-out
+
+# Node
+gamebattles-front/node_modules
+gamebattles-front/npm-debug.log
+gamebattles-front/yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+gamebattles-front/.angular/cache
+gamebattles-front/.sass-cache/
+gamebattles-front/connect.lock
+gamebattles-front/coverage
+gamebattles-front/libpeerconnection.log
+testem.log
+gamebattles-front/typings
+
+# System files
+.DS_Store
+Thumbs.db
