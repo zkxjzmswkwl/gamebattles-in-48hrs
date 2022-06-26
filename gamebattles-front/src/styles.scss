@@ -28,3 +28,11 @@ body::-webkit-scrollbar-thumb {
   --tw-translate-y: 35%  !important;
 
 }
+
+.btn-primary {
+  @apply bg-blue-600;
+
+}
+.btn-primary:hover {
+  @apply bg-blue-700;
+}
