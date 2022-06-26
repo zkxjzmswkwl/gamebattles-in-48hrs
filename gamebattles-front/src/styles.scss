@@ -36,3 +36,10 @@ body::-webkit-scrollbar-thumb {
 .btn-primary:hover {
   @apply bg-blue-700;
 }
+
+.grid-item {
+  background-color: #242933;
+  @apply mt-5;
+  @apply rounded-md;
+  @apply p-2;
+}

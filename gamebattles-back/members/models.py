@@ -13,6 +13,7 @@ PLATFORM_CHOICES = (
 
 class Member(AbstractUser):
     platform = models.CharField(max_length=32, choices=PLATFORM_CHOICES, default="PC")
+    picture = models.ImageField(upload_to="huge_dicks/", null=True, blank=True)
 
     def __str__(self):
         return self.username

@@ -1,32 +1,42 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { ApiService } from 'src/app/services';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit, OnDestroy {
+  // - Members
   @Input() email!: string;
+  @Input() username!: string;
   @Input() password!: string;
   @Input() confirmPassword!: string;
+  private regSub!: Subscription;
 
-  mismatchingPasswords: boolean = false;
+  public mismatchingPasswords: boolean = false;
 
-  constructor() { }
+  // - Logic start
+  constructor(private apiService: ApiService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   register() {
-    // TODO: Wire this up when backend is a thing.
     if (this.password !== this.confirmPassword) {
       this.mismatchingPasswords = true;
       return;
     }
 
-    console.log(this.email)
-    console.log(this.password)
-    console.log(this.confirmPassword)
+    this.regSub = this.apiService.dickballs(this.username, this.email, this.password).subscribe(
+      (r: any) => window.location.href = "/login",
+      (err: any) => console.log(err)
+    );
   }
 
+  ngOnDestroy(): void {
+    if (this.regSub) {
+      this.regSub.unsubscribe();
+    }
+  }
 }

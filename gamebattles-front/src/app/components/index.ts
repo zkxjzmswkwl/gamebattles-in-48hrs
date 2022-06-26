@@ -3,3 +3,4 @@ export { HomeComponent } from './home/home.component';
 export { FooterComponent } from './footer/footer.component';
 export { RegisterComponent } from './register/register.component';
 export { LoginComponent } from './login/login.component';
+export { AuthedHomeComponent } from './authed-home/authed-home.component';

@@ -40,3 +40,6 @@ gamebattles-front/typings
 # System files
 .DS_Store
 Thumbs.db
+
+*.pyc
+*.sqlite3
