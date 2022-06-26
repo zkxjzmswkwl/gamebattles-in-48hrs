@@ -6,7 +6,6 @@ import { ApiService } from '../api/api.service';
   providedIn: 'root'
 })
 export class AuthService {
-  // TODO: Wire this up to actually mean something once backend is a thing
   isAuthed: boolean = false;
   currentUser!: IMember;
 
@@ -16,7 +15,7 @@ export class AuthService {
         this.currentUser = r;
         this.isAuthed = true;
       },
-      (err: any) => alert(err)
+      (err: any) => console.log("User is not currently logged in.")
     );
   }
 }
